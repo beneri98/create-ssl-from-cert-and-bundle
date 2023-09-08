@@ -54,7 +54,7 @@ rl.question("Enter the filename (without extension): ", (filename) => {
   fs.writeFileSync(`${filename}.gd3.crt`, sections[2]);
 
   // Write combined chain certificate
-  const combinedData = `${bundleData}\n${certData}`;
+  const combinedData = `${bundleData.trim()}\n${certData}`;
   fs.writeFileSync(`${filename}.chain.crt`, combinedData);
 
   console.log("Files have been generated successfully.");
